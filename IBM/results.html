@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Meals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recommended Meals</h1>
+        <table >
+            <tr>
+                <th>Food Name</th>
+                <th>Calories</th>
+                <th>Carbs</th>
+                <th>Protein</th>
+                <th>Fat</th>
+                <th>Estimated Price</th>
+                <th>Recipe Instructions</th>
+            </tr>
+            {% for food in foods %}
+            <tr>
+                <td>{{ food.name }}</td>
+                <td>{{ food.calories }}</td>
+                <td>{{ food.carbs }}</td>
+                <td>{{ food.protein }}</td>
+                <td>{{ food.fat }}</td>
+                <td>{{ food.price }}</td>
+                <td>{{ food.instructions }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

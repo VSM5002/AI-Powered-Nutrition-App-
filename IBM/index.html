@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Nutrition Recommender</title>
+</head><style>
+    body {background-image: url(static/back1.gif);
+    form {background-color:  #0c4503;}}
+</style>
+
+<body>
+    <div class="container">
+        <h1>AI-Powered Nutrition App for India</h1>
+        <p>Personalized meal plans for low-income families based on family size, budget, and preferences.</p>
+        <h2>Enter Your Details</h2>
+        <form action="/get_meals" method="POST">
+            <label for="budget">Enter your budget:</label>
+            <input type="number" id="budget" name="budget" required><br>
+        
+            <label for="family_size">Family Size:</label>
+            <input type="number" id="family_size" name="family_size" required><br>
+        
+            <label for="diet_preference">Diet Preference:</label>
+            <select id="diet_preference" name="diet_preference">
+                <option value="vegetarian">Vegetarian</option>
+                <option value="non-vegetarian">Non-Vegetarian</option>
+                <option value="diabetic-friendly">Diabetic Friendly</option>
+            </select>
+            <br>
+        
+            <label for="state">Cuisine:</label>
+            <input type="text" id="cuisine" name="cuisine" placeholder="Optional"><br>
+        
+            <button type="submit">Get Meals</button>
+        </form>
+        
+    </div>
+</body>
+</html>
+
+
