@@ -1,21 +1,30 @@
 body {
+    background-image: url(back1.gif);
+    background-size: cover;
     font-family: Arial, sans-serif;
+    color: #333;
     margin: 0;
-    padding: 20px;
-    background-color: #0c4503;
-    background-image: url(C:/Users/Admin/OneDrive/IBM_DATATHON/static/back.gif);
+    padding: 0;
 }
-container{
-    font-family: Arial, sans-serif;
-    margin: 0;
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    background-color: #0c4503;
-    color: #fff;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 header {
     text-align: center;
     margin-bottom: 30px;
     color: #fff;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #0c4503;
 }
 
 h1,h2,p{
@@ -26,6 +35,8 @@ h1,h2,p{
 }
 
 form {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -34,24 +45,32 @@ form {
     background-image: url(C:/Users/Admin/OneDrive/IBM_DATATHON/static/back.gif);
 }
 
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 button {
-    background-color: #4CAF50;
+    background-color: #0c4503;
     color: white;
-    padding: 10px 15px;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0a3a02;
 }
 
 #mealPlanResult {
     margin-top: 20px;
-}
-label {
-    font-weight: bold;
-    color: #fff;
 }
   
 input {
@@ -60,4 +79,4 @@ input {
     display: block;
     width: 100%;
 }
-  
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nutrition App</h1>
+        <form id="nutrition-form">
+            <label for="budget">Budget (INR):</label>
+            <input type="number" id="budget" name="budget" required><br><br>
+
+            <label for="diet">Dietary Preference:</label>
+            <select id="diet" name="diet" required>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="non-vegetarian">Non-Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="diabetic-friendly">Diabetic Friendly</option>
+                <!-- Add more diet options as needed -->
+            </select><br><br>
+
+            <label for="region">Region:</label>
+            <select id="region" name="region" required>
+                <option value="North">North</option>
+                <option value="South">South</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+                <!-- Add more region options as needed -->
+            </select><br><br>
+
+            <button type="submit">Get Food Suggestions</button>
+        </form>
+
+        <h2>Suggested Food Items</h2>
+        <ul id="food-suggestions"></ul>
+    </div>
+
+    <script>
+        document.getElementById('nutrition-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const budget = document.getElementById('budget').value;
+            const diet = document.getElementById('diet').value;
+            const region = document.getElementById('region').value;
+
+            fetch('/suggest_food', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ budget, diet, region })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const foodSuggestions = document.getElementById('food-suggestions');
+                foodSuggestions.innerHTML = '';
+                data.forEach(food => {
+                    const li = document.createElement('li');
+                    li.textContent = `${food.name} - ${food.ingredients} - ₹${food.price}`;
+                    foodSuggestions.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
