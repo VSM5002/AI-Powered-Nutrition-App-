@@ -7,18 +7,63 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-body{
+body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background-color: #0c4503;
     color: #fff;
 }
+header {
+    background-color: #064002;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+footer {
+    background-color: #064002;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+}
+.container {
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    color: #000;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+table th {
+    background-color: #064002;
+    color: #fff;
+}
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+table tr:hover {
+    background-color: #ddd;
+}
 </style>
 <body>
+    <header>
+        AI-Powered Nutrition App
+    </header>
     <div class="container">
         <h1>Recommended Meals</h1>
-        <table >
+        <table>
             <tr>
                 <th>Food Name</th>
                 <th>Calories</th>
@@ -41,5 +86,8 @@ body{
             {% endfor %}
         </table>
     </div>
+    <footer>
+        &copy; 2023 AI-Powered Nutrition App. All rights reserved.
+    </footer>
 </body>
 </html>
